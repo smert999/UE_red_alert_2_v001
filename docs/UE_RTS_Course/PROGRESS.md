@@ -15,6 +15,14 @@ Use this file to record daily progress, decisions, and checkpoints. Add newest e
 - Decisions: Keep BP‑only approach; expand to right/top/bottom edges next. Keep clamps on Tick after all motion.
 - Next: Add right‑edge panning; then top/bottom; disable edge‑pan over UI areas.
 
+### 2025-09-28 (Edge Panning Expansion)
+- Work: Authored UE_KB docs for all remaining edges:
+  - `UE_KB/EdgePanning_RightEdge_Implementation.md`
+  - `UE_KB/EdgePanning_TopBottom_Implementation.md`
+  - Updated `UE_KB/Blueprint_EdgePanning_Diagram.md` to reflect all edges and execution order (Then1 edge‑pan → Then2 clamps).
+- Decisions: Use `ViewportSize` for right/top thresholds: compare `MouseX ≥ (ViewX - Border)`, `MouseY ≥ (ViewY - Border)`; bottom uses `MouseY ≤ Border`. Movement vectors: Right = `YawPivot.Right (Z=0)`, Left = `-Right`, Top = `YawPivot.Forward (Z=0)`, Bottom = `-Forward`. All scaled by `EdgePanSpeed × DeltaSeconds`.
+- Next: Implement right/top/bottom in `BP_RTS_CameraPawn` Event Tick following docs; then add UI hover‑lock (skip edge‑pan when cursor over UI widgets).
+
 ### 2025-09-28 (Factory AI Droid)
 - Work: Created Blueprint-only edge panning implementation guide for left screen edge. Documented exact Blueprint variables (EdgePanEnabled, EdgePanBorderPx=15, EdgePanSpeed=12000) and complete Event Tick node chain. Mouse position detection via GetMousePositionScaledByDPI, left boundary check (X ≤ 15px), YawPivot-based movement using negated Right Vector with Z=0 normalization. Frame-rate independent movement with EdgePanSpeed × DeltaTime. No C++ or Source folder changes required.
 - Decisions: Blueprint-only approach per request. Integration with existing YawPivot/PitchPivot architecture. Non-destructive implementation preserving WASD/Zoom/Rotation functionality. Minimal diff focused on BP_RTS_CameraPawn only.

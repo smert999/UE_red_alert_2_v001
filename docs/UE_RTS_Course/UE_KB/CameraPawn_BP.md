@@ -60,11 +60,12 @@ Camera (Details):
 - Event Tick → `Sequence`: Then0 (пусто), Then1 (edge‑pan), Then2 (Clamp X/Y).
 - Then1:
   - `Branch` (Condition = `EdgePanEnabled`).
-  - True → `Get Player Controller` → `Get Mouse Position Scaled by DPI`.
-  - `Branch` (Condition = `Return Value`).
+  - True → `Get Player Controller` → `Get Mouse Position` (координаты в пикселях Viewport) и `Get Viewport Size`.
+  - `Branch` (Condition = `Return Value` из `Get Mouse Position`).
   - True → `<= (float)` (A = `Location X`, B = `EdgePanBorderPx`).
   - `Branch` (Condition = результат `<=`).
   - True → движение: `YawPivot → Get Right Vector` → `Vector * (-1)` → `Break → Make(Z=0)` → `Normalize` → `Add Movement Input` (World Direction = нормализованный; Scale = `EdgePanSpeed * GetWorldDeltaSeconds`).
+  - Примечание: для edge‑panning используйте `Get Mouse Position` (PlayerController). `Get Mouse Position Scaled by DPI` выдаёт значения в другом масштабе и сравнение с `Get Viewport Size` может работать неверно.
 - Переменные: `BasePanSpeed=6000`, `FastPanSpeed=16000`, `BaseAccel=12000`, `FastAccel=36000`, `BaseDecel=12000`, `FastDecel=36000`.
 - BeginPlay: `Set Max Speed=BasePanSpeed` → `Set Acceleration=BaseAccel` → `Set Deceleration=BaseDecel` (Target = `FloatingPawnMovement`).
 - Action `FastPan` (Left Shift):

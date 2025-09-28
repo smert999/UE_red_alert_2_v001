@@ -14,7 +14,7 @@ Event Tick
           ║
           ╠═► Then0: (empty)
           ║
-          ╠═► Then1: EDGE PANNING LOGIC
+          ╠═► Then1: EDGE PANNING LOGIC (ALL EDGES)
           ║    ║
           ║    ╠═► Branch(EdgePanEnabled) ─── True ──► Get Player Controller
           ║    ║                                         ║
@@ -22,29 +22,17 @@ Event Tick
           ║    ║                                  Get Mouse Position Scaled by DPI
           ║    ║                                         ║
           ║    ║                                         ▼
-          ║    ║                                  <= (Float) ◄─── EdgePanBorderPx
-          ║    ║                                         ║
-          ║    ║                                         ▼
-          ║    ║                                  Branch(At Left Edge)
-          ║    ║                                         ║
-          ║    ║                                    True ▼
-          ║    ║                              YawPivot ─► Get Right Vector
-          ║    ║                                         ║
-          ║    ║                                         ▼
-          ║    ║                                    * (-1) ─► Break Vector
-          ║    ║                                              ║
-          ║    ║                                              ▼
-          ║    ║                                         Make Vector
-          ║    ║                                         (X, Y, Z=0)
-          ║    ║                                              ║
-          ║    ║                                              ▼
-          ║    ║                                         Normalize ─┐
-          ║    ║                                                    ║
-          ║    ║    EdgePanSpeed ─► * ◄─── Get World Delta Seconds  ║
-          ║    ║                    ║                               ║
-          ║    ║                    ▼                               ║
-          ║    ║              Add Movement Input ◄──────────────────┘
-          ║    ║              (World Direction, Scale Value)
+          ║    ║                           ┌──────────── Left Edge (X ≤ Border)
+          ║    ║                           │   YawPivot.Right → *(-1) → Z=0 → Normalize → Add Movement
+          ║    ║                           │
+          ║    ║                           ├──────────── Right Edge (X ≥ ViewX - Border)
+          ║    ║                           │   YawPivot.Right → Z=0 → Normalize → Add Movement
+          ║    ║                           │
+          ║    ║                           ├──────────── Top Edge (Y ≥ ViewY - Border)
+          ║    ║                           │   YawPivot.Forward → Z=0 → Normalize → Add Movement
+          ║    ║                           │
+          ║    ║                           └──────────── Bottom Edge (Y ≤ Border)
+          ║    ║                               YawPivot.Forward → *(-1) → Z=0 → Normalize → Add Movement
           ║    ╚══════════════════════════════════════════════════════════╗
           ║                                                               ║
           ╚═► Then2: MAP CLAMPS ◄═══════════════════════════════════════════╝
