@@ -54,6 +54,17 @@ Camera (Details):
   - Variables: `MinX, MaxX, MinY, MaxY`.
   - Event Tick: `GetActorLocation` → `Clamp(float)` X/Y → `Make Vector` (Z из исходного) → `SetActorLocation(Sweep=false)`.
   - Частые ошибки: Z=0 (чёрный экран), MinX/MinY забыли со знаком «−».
+
+### Edge‑panning (левый край)
+- Variables: `EdgePanEnabled=true (bool)`, `EdgePanBorderPx=15 (int)`, `EdgePanSpeed=12000 (float)`.
+- Event Tick → `Sequence`: Then0 (пусто), Then1 (edge‑pan), Then2 (Clamp X/Y).
+- Then1:
+  - `Branch` (Condition = `EdgePanEnabled`).
+  - True → `Get Player Controller` → `Get Mouse Position Scaled by DPI`.
+  - `Branch` (Condition = `Return Value`).
+  - True → `<= (float)` (A = `Location X`, B = `EdgePanBorderPx`).
+  - `Branch` (Condition = результат `<=`).
+  - True → движение: `YawPivot → Get Right Vector` → `Vector * (-1)` → `Break → Make(Z=0)` → `Normalize` → `Add Movement Input` (World Direction = нормализованный; Scale = `EdgePanSpeed * GetWorldDeltaSeconds`).
 - Переменные: `BasePanSpeed=6000`, `FastPanSpeed=16000`, `BaseAccel=12000`, `FastAccel=36000`, `BaseDecel=12000`, `FastDecel=36000`.
 - BeginPlay: `Set Max Speed=BasePanSpeed` → `Set Acceleration=BaseAccel` → `Set Deceleration=BaseDecel` (Target = `FloatingPawnMovement`).
 - Action `FastPan` (Left Shift):
