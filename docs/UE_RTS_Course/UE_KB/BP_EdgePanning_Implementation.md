@@ -57,11 +57,12 @@ Event Tick
 - **Condition**: EdgePanEnabled (variable)
 - **Location**: Connect to Event Tick after existing logic
 
-#### 2. Get Mouse Position
+#### 2. Get Mouse Position ⚠️ IMPORTANT FIX
 - **Node**: Get Player Controller (Player Index: 0)
-- **Node**: Get Mouse Position Scaled by DPI (Target: Player Controller output)
+- **Node**: Get Mouse Position (Target: Player Controller output) ⚠️ NOT "Scaled by DPI"!
 - **Node**: Break Vector 2D (Input: Mouse Position output)
 - **Use**: X output for edge detection
+- **Note**: DPI scaling can cause coordinate issues - use regular Get Mouse Position
 
 #### 3. Get Viewport Size (for reference)
 - **Node**: Get Viewport Size (Target: Player Controller output)
