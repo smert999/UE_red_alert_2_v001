@@ -72,3 +72,22 @@ Plugins/*/Intermediate/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
+ 
+# UE project located in subfolder (ensure subdirs are ignored too)
+UE_RTS_Course/Binaries/
+UE_RTS_Course/Intermediate/
+UE_RTS_Course/Saved/
+UE_RTS_Course/DerivedDataCache/
+
+# Fallback: ignore these folders anywhere in the repo
+**/Binaries/**
+**/Intermediate/**
+**/Saved/**
+**/DerivedDataCache/**
+
+# Optional extra binary patterns that sometimes appear
+**/*.pdb
+**/*.uhtmanifest
+**/*.uhtpath
+**/*.deps
+**/*.modules
