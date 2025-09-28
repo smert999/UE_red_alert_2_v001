@@ -1,9 +1,11 @@
-# Edge Panning (Left Edge) - Implementation Guide
+# Edge Panning (Left Edge) - Blueprint Implementation Guide
 
 ## Overview
 Implementing left edge panning for RTS camera when mouse cursor is within 15px of left screen border.
 
-## Target Blueprint: BP_RTS_CameraPawn
+## Target Blueprint: Content/Blueprints/BP_RTS_CameraPawn.uasset
+
+⚠️ **BLUEPRINT ONLY** - No C++ required, no Source folder changes
 
 ### Variables to Add
 

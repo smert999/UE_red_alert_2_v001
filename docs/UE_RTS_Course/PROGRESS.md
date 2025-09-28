@@ -11,9 +11,9 @@ Use this file to record daily progress, decisions, and checkpoints. Add newest e
 ---
 
 ### 2025-09-28 (Factory AI Droid)
-- Work: Created comprehensive edge panning implementation guide for left screen edge. Added documentation for Blueprint variables (EdgePanEnabled, EdgePanBorderPx, EdgePanSpeed) and complete Event Tick logic. Mouse position detection via GetMousePositionScaledByDPI, left boundary check (X ≤ 15px), YawPivot-based movement using negated Right Vector with Z=0 normalization. Frame-rate independent movement with EdgePanSpeed × DeltaTime.
-- Decisions: Blueprint-first approach maintained. Integration with existing YawPivot/PitchPivot architecture. Non-destructive implementation preserving WASD/Zoom/Rotation functionality.
-- Next: Manual Blueprint implementation in UE Editor, test edge panning functionality, extend to all screen edges (right/top/bottom).
+- Work: Created Blueprint-only edge panning implementation guide for left screen edge. Documented exact Blueprint variables (EdgePanEnabled, EdgePanBorderPx=15, EdgePanSpeed=12000) and complete Event Tick node chain. Mouse position detection via GetMousePositionScaledByDPI, left boundary check (X ≤ 15px), YawPivot-based movement using negated Right Vector with Z=0 normalization. Frame-rate independent movement with EdgePanSpeed × DeltaTime. No C++ or Source folder changes required.
+- Decisions: Blueprint-only approach per request. Integration with existing YawPivot/PitchPivot architecture. Non-destructive implementation preserving WASD/Zoom/Rotation functionality. Minimal diff focused on BP_RTS_CameraPawn only.
+- Next: Manual Blueprint implementation in UE Editor following exact node specifications, test edge panning functionality, extend to all screen edges (right/top/bottom).
 
 ### 2025-09-15
 - Work: Rebuilt camera rig with `YawPivot`/`PitchPivot` → `SpringArm` → `Camera`. Moved WASD to screen-space via `YawPivot` Forward/Right (Z=0, Normalize). Implemented Zoom (OrthoWidth clamp) and Q/E rotation using `CameraYaw` + `SetRelativeRotation(Target=YawPivot)`. Added FastPan (Shift) with dynamic `Max Speed/Acceleration/Deceleration`. Fixed issues: `YawPivot` None on BeginPlay (relinked component), one-way rotation (used Add for both), docs updated (`CameraRig_RTS_Rebuild.md`).
