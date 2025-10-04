@@ -1,0 +1,25 @@
+так щас я сам распишу как вижу и как мне понятно а то тебя хрен поймешь 
+
+и так 
+обозначения 
+= exec ( белый цвет связи )
+--boolean ( красный цвет связи)
+~float ( зеленый цвет связи )
+^^current value ( синий цвет связи )
+>>integer ( изумрудносиний цвет связи )
+///vector( желтый цвет соеденения )
+|| знак обозначающий что после него будет написано название ноды и ее выхода ,пишеться после тойже ноды ее входа куда пришла инфа 
+
+1. Event Tick = Sequence.Then0: (empty)
+                                        .Then1 =  Branch 1.True = Branch 2.True = Branch 3.True = Add Movement Input
+                                        .Then2 = Set Actor Location
+2. EdgePanEnabled -- Branch 1.Condition
+3. Get Player Controller.Return Valie ^^ Get Mouse Position Scaled by DPI.Player || Get Mouse Position Scaled by DPI.Location X ~ "<="1 -- Branch 3.Condition
+                                                                                 || Get Mouse Position Scaled by DPI.Return Value -- Branch 2.Condition
+4. EdgePanBorderPx >> "<="1
+5. YawPivot ^^ Get Right Vector.Target || Get Right Vector.Return Value /// multiply.A /// Break Vector.In Vec || Break Vector.X ~ Make Vector.X || Make Vector.Return Value /// Normalize.A || Normalize.Return Value /// Add Movement Input.World Direction
+                                                      To vector (float) /// multiply.B                            Break Vector.Y ~ Make Vector.Y
+6.                           EdgePanSpeed ~ multiply.A || multiply ~ Add Movement Input.Scale Value
+     Get World Delta Seconds.Return Value ~ multiply.B
+
+ну вот как пример который мне понятен ,изучи и если продумаеш все правила и сможеш эту схему еще лучше улучшить то будет супер 
