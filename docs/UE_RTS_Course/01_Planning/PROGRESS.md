@@ -10,6 +10,19 @@ Use this file to record daily progress, decisions, and checkpoints. Add newest e
 
 ---
 
+### 2025-10-04 (GitHub README & Cleanup ✅)
+- Work: Создан профессиональный README.md для GitHub репозитория (200+ строк). Удалены устаревшие файлы из корня проекта (SUMMARY.md, BLUEPRINT_PR_DESCRIPTION.md). README включает: project vision, features, AI pipeline, структуру проекта, getting started guide, roadmap summary, documentation links, badges, stats. Оформлен в современном GitHub стиле с emoji и таблицами.
+- Decisions:
+  - **README как точка входа:** Для новых разработчиков первое что видят на GitHub
+  - **Профессиональный стиль:** Badges, структурированные секции, quick start
+  - **Удалены устаревшие:** SUMMARY.md и BLUEPRINT_PR_DESCRIPTION.md больше не нужны
+  - **Акцент на AI Pipeline:** Highlighted как ключевая особенность проекта
+- Result:
+  - ✅ Профессиональный GitHub README готов
+  - ✅ Корень проекта чистый (только README.md + .gitignore)
+  - ✅ Все ссылки ведут на новую структуру docs/
+- Next: Коммит всех изменений, начало Week 2.5 execution
+
 ### 2025-10-04 (Documentation Reorganization ✅)
 - Work: Полная реорганизация структуры документации. Создано 7 логических папок с числовой префиксацией (01-07). Все 20+ документов перемещены по категориям. Создан README_FOLDER.md для каждой папки. PowerShell скрипт reorganize_docs.ps1 для автоматизации. Обновлён MASTER_INDEX.md со всеми новыми путями и cross-references.
 - Decisions:
