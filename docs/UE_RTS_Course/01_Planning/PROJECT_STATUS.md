@@ -11,8 +11,8 @@
 
 ## 📊 Общий статус
 
-**Прогресс по Roadmap:** Week 2 - RA2 Camera ✅ ЗАВЕРШЕНА
-**Текущая фаза:** Week 2.5 - Map + Menu + Cursor (Gameplay-First Approach)
+**Прогресс по Roadmap:** Week 2.5 - UI Menu System ⏸️ READY FOR BLUEPRINTS
+**Текущая фаза:** Week 2.5 - Меню + Курсор (Core UI Ready)
 
 ---
 
@@ -67,6 +67,77 @@
 
 #### Карты:
 - `Main.umap` - основная тестовая карта с Landscape
+
+### 🎨 МЕНЮ И UI (READY FOR IMPLEMENTATION)
+
+#### C++ Классы:
+- ✅ `UMenuManager` - управление меню и звуком
+- ✅ `UGameCursor` - система курсора с анимацией
+
+#### Документация:
+- ✅ `MENU_IMPLEMENTATION_GUIDE.md` - полная архитектура
+- ✅ `MENU_BLUEPRINT_GUIDE.md` - пошаговая инструкция
+- ✅ `QUICK_START_MENU.md` - быстрый старт
+
+#### Структура проекта:
+```
+Content/UI/
+├─ Menus/
+│  ├─ WBP_MainMenu (создать)
+│  ├─ WBP_MenuButton (создать)
+│  ├─ WBP_SkirmishMenu (позже)
+│  └─ WBP_SettingsMenu (позже)
+├─ Cursor/
+│  └─ WBP_GameCursor (создать)
+└─ Effects/
+   └─ Materials/
+
+Source/UE_RTS_Course/
+├─ Public/UI/
+│  ├─ MenuManager.h ✅
+│  └─ GameCursor.h ✅
+└─ Private/UI/
+   ├─ MenuManager.cpp ✅
+   └─ GameCursor.cpp ✅
+```
+
+---
+
+## 📊 Общий статус
+
+**Прогресс по Roadmap:** Week 2.5 - UI Menu System ⏸️ READY FOR BLUEPRINTS
+**Текущая фаза:** Week 2.5 - Меню + Курсор (Core UI Ready)
+
+---
+
+## ✅ ЧТО ДЕЛАТЬ ДАЛЬШЕ
+
+### Week 2.5 (Menu Implementation) - NEXT:
+
+1. **Компиляция C++ (10 мин)**
+   - [ ] Refresh Visual Studio Project
+   - [ ] Compile в Editor
+
+2. **Создание Widget Blueprints (60 мин)**
+   - [ ] WBP_MainMenu
+   - [ ] WBP_MenuButton
+   - [ ] WBP_GameCursor
+
+3. **Event Graph программирование (30 мин)**
+   - [ ] Hover/Click эффекты
+   - [ ] Звуки
+   - [ ] Анимации
+
+4. **Game Mode интеграция (15 мин)**
+   - [ ] Добавить UI в BP_RTS_GameMode
+   - [ ] Тестирование
+
+5. **Тестирование (15 мин)**
+   - [ ] Визуальные проверки
+   - [ ] Интерактивность
+   - [ ] Звуки
+
+**Итого:** 2-3 часа работы
 
 ---
 
