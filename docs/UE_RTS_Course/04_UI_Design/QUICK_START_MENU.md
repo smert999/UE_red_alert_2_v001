@@ -16,48 +16,38 @@
 
 ### Этап 1: Компиляция C++ кода (10 мин)
 
-**Вариант 1: В самом UE5.6 Editor (САМЫЙ ПРОСТОЙ)**
+**ОФИЦИАЛЬНЫЙ СПОСОБ UE 5.6:**
 
 ```
-1. Открыть UE5.6 Editor
-2. File → Compile
-   (или горячая клавиша: Ctrl+Shift+B)
-3. Жди сообщения "Compilation Successful"
-4. Если всё ОК → переходи к Этапу 2
+1. В UE 5.6 Editor:
+   Tools → Update Visual Studio Project
+
+2. Tools → Open Visual Studio
+
+3. В Visual Studio (Solution Explorer):
+   Правой кнопкой на проект → Build (или Rebuild)
+
+4. Жди "Build succeeded" сообщение
+
+5. Вернись в UE Editor - она обновит классы автоматически
 ```
 
-**Вариант 2: Через Visual Studio (если UE предложит)**
+**Если Update Visual Studio Project недоступно:**
 
 ```
-1. Когда открываешь проект в UE - может появиться диалог
-   "Would you like to rebuild?"
-2. Нажми "Yes"
-3. Visual Studio откроется и скомпилирует
-4. После - UE перезагрузится с новыми классами
-```
-
-**Вариант 3: Вручную Visual Studio (если нужна тонкая настройка)**
-
-```
-1. Открой Visual Studio
-   (File → Open → Projekt/Solution)
-   E:\UE_red_alert_2_v001\UE_RTS_Course\UE_RTS_Course.sln
-
-2. В Solution Explorer (правая панель):
-   Найди "UE_RTS_Course" проект
-
-3. Правой кнопкой → "Rebuild"
-
-4. Жди завершения (должно написать "Rebuild succeeded")
-
-5. Вернись в UE Editor - она обновится автоматически
+1. Закрой UE5.6 и Visual Studio
+2. E:\UE_red_alert_2_v001\UE_RTS_Course\ 
+   → Правой кнопкой на .uproject файл
+   → "Generate Visual Studio project files"
+3. Открой .sln в Visual Studio
+4. Build проект
 ```
 
 **Проверка:**
 ```
-✓ MenuManager скомпилировался без ошибок
-✓ GameCursor скомпилировался без ошибок
-✓ Output Log зелёный (нет красных ошибок)
+✓ "Build succeeded" в Output окне Visual Studio
+✓ Вернись в UE5.6 - новые классы появятся
+✓ Нет красных ошибок
 ```
 
 ---
