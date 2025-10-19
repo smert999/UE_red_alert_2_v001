@@ -499,6 +499,17 @@ Audio/
 
 ## 🎯 INTEGRATION: Game Mode & Player Controller
 
+### Компиляция C++ для UE 5.6
+
+**Просто в UE Editor:**
+```
+1. File → Compile  (или Ctrl+Shift+B)
+2. Жди завершения
+3. Если красных ошибок нет → ОК!
+```
+
+Если UE предложит "Would you like to rebuild?" - нажми Yes и Visual Studio сам всё сделает.
+
 ### Модифицированный BP_RTS_GameMode:
 
 ```cpp

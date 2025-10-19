@@ -109,13 +109,30 @@ Content/UI/
 
 ---
 
-## 🎯 ПЛАН РЕАЛИЗАЦИИ
+## 🎯 ПЛАН РЕАЛИЗАЦИИ (2-3 ЧАСА)
 
-### Этап 1: Компиляция (5-10 минут)
+### **Этап 1: Компиляция** (5-10 мин)
+
+**Способ A: В самом UE5.6 (САМЫЙ ПРОСТОЙ)**
 ```
-1. Открыть Visual Studio
-2. Rebuild Solution
-3. Если ошибок - проверить Output
+1. Открыть UE5.6 Editor
+2. File → Compile  (или Ctrl+Shift+B)
+3. Жди "Compilation Successful"
+```
+
+**Способ B: Visual Studio (если UE предложит)**
+```
+1. Диалог → "Would you like to rebuild?" → Yes
+2. Visual Studio скомпилирует
+3. UE перезагрузится автоматически
+```
+
+**Способ C: Вручную Visual Studio**
+```
+1. Открой: E:\UE_red_alert_2_v001\UE_RTS_Course\UE_RTS_Course.sln
+2. Solution Explorer → UE_RTS_Course (правой кнопкой)
+3. Rebuild
+4. Жди "Rebuild succeeded"
 ```
 
 ### Этап 2: Widget Blueprints (60 минут)

@@ -16,17 +16,48 @@
 
 ### Этап 1: Компиляция C++ кода (10 мин)
 
-```powershell
-# В UE Editor
-Tools → Refresh Visual Studio Project
-Compile (Ctrl+Shift+B в Visual Studio)
-File → Compile в Editor
+**Вариант 1: В самом UE5.6 Editor (САМЫЙ ПРОСТОЙ)**
+
+```
+1. Открыть UE5.6 Editor
+2. File → Compile
+   (или горячая клавиша: Ctrl+Shift+B)
+3. Жди сообщения "Compilation Successful"
+4. Если всё ОК → переходи к Этапу 2
+```
+
+**Вариант 2: Через Visual Studio (если UE предложит)**
+
+```
+1. Когда открываешь проект в UE - может появиться диалог
+   "Would you like to rebuild?"
+2. Нажми "Yes"
+3. Visual Studio откроется и скомпилирует
+4. После - UE перезагрузится с новыми классами
+```
+
+**Вариант 3: Вручную Visual Studio (если нужна тонкая настройка)**
+
+```
+1. Открой Visual Studio
+   (File → Open → Projekt/Solution)
+   E:\UE_red_alert_2_v001\UE_RTS_Course\UE_RTS_Course.sln
+
+2. В Solution Explorer (правая панель):
+   Найди "UE_RTS_Course" проект
+
+3. Правой кнопкой → "Rebuild"
+
+4. Жди завершения (должно написать "Rebuild succeeded")
+
+5. Вернись в UE Editor - она обновится автоматически
 ```
 
 **Проверка:**
 ```
 ✓ MenuManager скомпилировался без ошибок
 ✓ GameCursor скомпилировался без ошибок
+✓ Output Log зелёный (нет красных ошибок)
 ```
 
 ---
