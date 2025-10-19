@@ -16,38 +16,37 @@
 
 ### Этап 1: Компиляция C++ кода (10 мин)
 
-**ОФИЦИАЛЬНЫЙ СПОСОБ UE 5.6:**
+**ПРАВИЛЬНЫЙ СПОСОБ UE 5.6:**
 
 ```
 1. В UE 5.6 Editor:
-   Tools → Update Visual Studio Project
+   File → Refresh Visual Studio Project
+   (опционально, если есть)
 
-2. Tools → Open Visual Studio
+2. Закрой UE 5.6
 
-3. В Visual Studio (Solution Explorer):
-   Правой кнопкой на проект → Build (или Rebuild)
+3. Перейди в папку проекта:
+   E:\UE_red_alert_2_v001\UE_RTS_Course\
 
-4. Жди "Build succeeded" сообщение
-
-5. Вернись в UE Editor - она обновит классы автоматически
-```
-
-**Если Update Visual Studio Project недоступно:**
-
-```
-1. Закрой UE5.6 и Visual Studio
-2. E:\UE_red_alert_2_v001\UE_RTS_Course\ 
-   → Правой кнопкой на .uproject файл
+4. Правой кнопкой на UE_RTS_Course.uproject
    → "Generate Visual Studio project files"
-3. Открой .sln в Visual Studio
-4. Build проект
+
+5. Открой UE_RTS_Course.sln в Visual Studio
+
+6. Build → Build Solution
+   (или горячая клавиша Ctrl+Shift+B)
+
+7. Жди "Build succeeded" сообщение
+
+8. Вернись в UE 5.6 - новые C++ классы появятся
 ```
 
 **Проверка:**
 ```
-✓ "Build succeeded" в Output окне Visual Studio
-✓ Вернись в UE5.6 - новые классы появятся
-✓ Нет красных ошибок
+✓ "Build succeeded" в Visual Studio Output
+✓ MenuManager класс видно в UE Editor
+✓ GameCursor класс видно в UE Editor
+✓ Нет красных ошибок в Output Log UE
 ```
 
 ---
@@ -57,7 +56,7 @@
 #### 2.1 WBP_MainMenu (главное меню)
 
 ```
-1. Right-Click в Content/UI/Menus/
+1. Right-Click in Content/UI/Menus/
 2. Create → Widget Blueprint
 3. Name: WBP_MainMenu
 4. Parent Class: UserWidget
@@ -83,7 +82,7 @@ Canvas Panel
 #### 2.2 WBP_MenuButton (переиспользуемая кнопка)
 
 ```
-1. Right-Click в Content/UI/Menus/
+1. Right-Click in Content/UI/Menus/
 2. Create → Widget Blueprint
 3. Name: WBP_MenuButton
 4. Parent Class: UserWidget
@@ -102,7 +101,7 @@ Canvas Panel
 #### 2.3 WBP_GameCursor (курсор)
 
 ```
-1. Right-Click в Content/UI/Cursor/
+1. Right-Click in Content/UI/Cursor/
 2. Create → Widget Blueprint
 3. Name: WBP_GameCursor
 4. Parent Class: UserWidget
