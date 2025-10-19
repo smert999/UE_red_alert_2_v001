@@ -14,44 +14,17 @@
 
 ## 🎯 ЧТО НАДО СДЕЛАТЬ (5 этапов)
 
-### Этап 1: Компиляция C++ кода (10 мин)
-
-**ПРАВИЛЬНЫЙ СПОСОБ UE 5.6:**
+### Этап 1: Подготовка (5 мин)
 
 ```
-1. В UE 5.6 Editor:
-   File → Refresh Visual Studio Project
-   (опционально, если есть)
-
-2. Закрой UE 5.6
-
-3. Перейди в папку проекта:
-   E:\UE_red_alert_2_v001\UE_RTS_Course\
-
-4. Правой кнопкой на UE_RTS_Course.uproject
-   → "Generate Visual Studio project files"
-
-5. Открой UE_RTS_Course.sln в Visual Studio
-
-6. Build → Build Solution
-   (или горячая клавиша Ctrl+Shift+B)
-
-7. Жди "Build succeeded" сообщение
-
-8. Вернись в UE 5.6 - новые C++ классы появятся
-```
-
-**Проверка:**
-```
-✓ "Build succeeded" в Visual Studio Output
-✓ MenuManager класс видно в UE Editor
-✓ GameCursor класс видно в UE Editor
-✓ Нет красных ошибок в Output Log UE
+1. Открыть UE5.6 Editor
+2. Убедиться что проект загружен
+3. Готово!
 ```
 
 ---
 
-### Этап 2: Создание Widget'ов (30 мин)
+### Этап 2: Создание Widget'ов (60 мин)
 
 #### 2.1 WBP_MainMenu (главное меню)
 
